@@ -46,9 +46,11 @@ public class User implements UserDetails {
 
     private Role role;
 
+    @Builder.Default
     @Column(name = "is_active", nullable = false)
     private boolean isActive = true;
 
+    @Builder.Default
     @Column(name = "is_verified", nullable = false)
     private boolean isVerified = false;
 
@@ -74,9 +76,11 @@ public class User implements UserDetails {
     @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 
+    @Builder.Default
     @OneToMany(mappedBy = "user", cascade = 
     {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
 
+    @Builder.Default
     private Set<BorrowingRecord> borrowingRecords = new HashSet<>();
 
     @PrePersist
