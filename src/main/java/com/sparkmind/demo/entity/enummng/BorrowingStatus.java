@@ -1,4 +1,4 @@
-package com.example.demo.entity.enummng;
+package com.sparkmind.demo.entity.enummng;
 
 public enum BorrowingStatus {
     BORROWED,

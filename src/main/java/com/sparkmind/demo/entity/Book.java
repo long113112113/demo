@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.sparkmind.demo.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

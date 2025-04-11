@@ -1,9 +1,10 @@
-package com.example.demo.entity;
+package com.sparkmind.demo.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDateTime;
-import com.example.demo.entity.enummng.BorrowingStatus;
+
+import com.sparkmind.demo.entity.enummng.BorrowingStatus;
 
 @Getter
 @Setter
