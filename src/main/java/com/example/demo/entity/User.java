@@ -43,7 +43,6 @@ public class User implements UserDetails {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "role_id", nullable = false)
-
     private Role role;
 
     @Builder.Default
@@ -72,14 +71,9 @@ public class User implements UserDetails {
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "role_id", nullable = false)
-    private Role role;
-
     @Builder.Default
     @OneToMany(mappedBy = "user", cascade = 
     {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
-
     @Builder.Default
     private Set<BorrowingRecord> borrowingRecords = new HashSet<>();
 
