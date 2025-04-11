@@ -32,7 +32,7 @@ public class User implements UserDetails {
     @Column(name = "email", nullable = false, unique = true, length = 255)
     private String email;
 
-    @Column(name = "passwordhash", nullable = false, length = 255)
+    @Column(name = "password_hash", nullable = false, length = 255)
     private String passwordHash;
     
     @Column(name = "full_name"  , length = 100)
@@ -79,8 +79,6 @@ public class User implements UserDetails {
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
-        isActive= true;
-        isVerified = false;
     }
     
     @PreUpdate
@@ -92,7 +90,7 @@ public class User implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         Set<GrantedAuthority> authorities = new HashSet<>();
         if(this.role != null) {
-            authorities.add(new SimpleGrantedAuthority("role_" + this.role.getRoleName().toUpperCase())); 
+            authorities.add(new SimpleGrantedAuthority("ROLE_" + this.role.getRoleName().toUpperCase())); 
         }
         return authorities;
     }
@@ -114,6 +112,11 @@ public class User implements UserDetails {
 
     @Override
     public boolean isAccountNonLocked() {
+        return this.isActive;
+    }
+
+    @Override 
+    public boolean isCredentialsNonExpired() {
         return true;
     }
 
