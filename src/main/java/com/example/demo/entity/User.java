@@ -72,9 +72,7 @@ public class User implements UserDetails {
     private LocalDateTime updatedAt;
 
     @Builder.Default
-    @OneToMany(mappedBy = "user", cascade = 
-    {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
-    @Builder.Default
+    @OneToMany(mappedBy = "user", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
     private Set<BorrowingRecord> borrowingRecords = new HashSet<>();
 
     @PrePersist
@@ -102,6 +100,11 @@ public class User implements UserDetails {
     @Override 
     public String getUsername() {
         return this.email;
+    }
+
+    @Override
+    public String getPassword() {
+        return this.passwordHash;
     }
 
     @Override
