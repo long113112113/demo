@@ -14,6 +14,7 @@ Tạo các lớp User, Role, Book với các thuộc tính cơ bản và annotat
 Sử dụng Lombok (@Getter, @Setter, @NoArgsConstructor, @AllArgsConstructor).
 Tạo các lớp Repository cơ bản:
 Tạo các interface UserRepository, RoleRepository, BookRepository kế thừa JpaRepository.
+
 Giai đoạn 1: Quản lý User Cơ bản và Authentication/Authorization (Spring Security + JWT)
 Thêm Dependency: Spring Security, jjwt-api, jjwt-impl, jjwt-jackson (hoặc thư viện JWT khác).
 Seed dữ liệu Role và Admin: Tạo một CommandLineRunner bean hoặc dùng Liquibase changeset để thêm sẵn các Role ('Admin', 'User') và tài khoản admin/admin vào CSDL khi ứng dụng khởi động.
