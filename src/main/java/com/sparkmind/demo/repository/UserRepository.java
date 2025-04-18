@@ -26,7 +26,7 @@ public interface UserRepository extends JpaRepository<User, Integer>, JpaSpecifi
     List<User> findByRole_RoleName(String roleName);
 
     //Tìm User dựa trên tên
-    List<User> findByFullNameContainingIgnoreCase(String nameKeyworld);
+    List<User> findByFullNameContainingIgnoreCase(String nameKeyword);
 
     
 }
