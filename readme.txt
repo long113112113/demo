@@ -17,9 +17,9 @@ Tạo các interface UserRepository, RoleRepository, BookRepository kế thừa 
 
 Giai đoạn 1: Quản lý User Cơ bản và Authentication/Authorization (Spring Security + JWT)
 Thêm Dependency: Spring Security, jjwt-api, jjwt-impl, jjwt-jackson (hoặc thư viện JWT khác).
-Seed dữ liệu Role và Admin: Tạo một CommandLineRunner bean hoặc dùng Liquibase changeset để thêm sẵn các Role ('Admin', 'User') và tài khoản admin/admin vào CSDL khi ứng dụng khởi động.
+Seed dữ liệu Role và Admin: Tạo một CommandLineRunner bean thêm Role ('Admin', 'User') và tài khoản admin/admin vào CSDL khi ứng dụng khởi động.
 Cấu hình Spring Security:
-Tạo lớp cấu hình kế thừa WebSecurityConfigurerAdapter (Spring Boot 2.x) hoặc sử dụng SecurityFilterChain bean (Spring Boot 3.x+).
+Tạo lớp cấu hình sử dụng SecurityFilterChain bean (Spring Boot 3.x+).
 Cấu hình PasswordEncoder (sử dụng BCryptPasswordEncoder).
 Cấu hình AuthenticationManager.
 Triển khai UserDetailsService để load thông tin user từ UserRepository.
